@@ -1,16 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Mover : MonoBehaviour {
 
-	public float speed;
-	private Rigidbody rb;
-
+	public NavMeshAgent navMeshAgent;
+	public Transform exitTarget;
 	// Use this for initialization
 	void Start () {
 		
-		rb = GetComponent<Rigidbody> ();
-		rb.velocity = transform.forward * speed;
+		navMeshAgent.destination = exitTarget.position;
+
+
 	}
+
+
 }
